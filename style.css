@@ -1,0 +1,691 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap');
+body {
+	background-color: #000000;
+	color: #ffffff;
+	font-size: 16px;
+	font-family: "Teko", monospace;
+	font-weight: 700;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+}
+
+#srtQueryData {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.title {
+	padding-right: 10px;
+}
+
+font {
+	padding-right: 10px;
+}
+
+#currenthp {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	padding-left: 10px;
+	font-size: 24px;
+	line-height: 30px;
+	width: 420px;
+}
+
+#Money {
+	position: relative;
+	top: 15px;
+	font-size: 20px;
+	display: flex;
+	justify-content: start;
+	padding-left: 10px;
+
+}
+
+#DAChris {
+	position: relative;
+	top: 15px;
+	font-size: 20px;
+	display: flex;
+	justify-content: start;
+	padding-left: 10px;
+}
+
+#DASheva {
+	position: relative;
+	top: 15px;
+	font-size: 20px;
+	display: flex;
+	justify-content: start;
+	padding-left: 10px;
+}
+
+#SRTVersion {
+	position: absolute;
+	align-items: center;
+	right: 0px;
+	bottom: 14px;
+	font-size: 20px;
+	display: flex;
+}
+
+.SRTInfoWidth {
+	position: relative;
+	width: calc(100%);
+}
+
+#GameVersion {
+	position: absolute;
+	right: 18px;
+	bottom: -15px;
+	font-size: 20px;
+	display: flex;
+}
+
+.GameInfoWidth {
+	position: relative;
+	width: calc(100%);
+}
+
+.hp {
+    position: relative;
+    top: 10px;
+    left: -1px;
+    background: rgba(34, 26, 26, 0.6);
+    width: calc(100% - 8px);
+    border: rgba(60, 60, 60, 1) solid 2px;
+    height: 30px;
+}
+
+.hpbar {
+	width: 100%;
+	height: 30px;
+}
+
+.fine {
+	background: rgba(0, 102, 0, 0.6);
+}
+
+.caution {
+	background: rgba(218, 165, 32, 0.6);
+}
+
+.danger {
+	background: rgba(153,0,0,0.6);
+}
+
+.dead {
+	background: transparent;
+}
+
+#ehp {
+	font-size: 24px;
+	color: red;
+	padding-left: 10px;
+	font-weight: 700;
+}
+
+#percenthp {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	align-items: center;
+	padding-right: 10px;
+	font-size: 24px;
+	line-height: 30px;
+}
+
+.enemyhp {
+	position: relative;
+	top: 15px;
+	left: -1px;
+	background: rgba(34, 26, 26, 0.6);
+	width: calc(100% - 8px);
+	border: rgba(60, 60, 60, 1) solid 2px;
+	height: 30px;
+	margin-bottom: 5px;
+}
+
+.enemyhpbar {
+	width: 100%;
+	height: 30px;
+}
+
+#currentenemyhp {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	padding-left: 10px;
+	font-size: 24px;
+	line-height: 30px;
+}
+
+#percentenemyhp {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	align-items: center;
+	padding-right: 10px;
+	font-size: 24px;
+	line-height: 30px;
+}
+
+.green {
+	color: #00FF00;
+}
+
+.yellow {
+	color: yellow;
+}
+
+.red {
+	color: red;
+}
+
+.grey {
+	color: gray;
+}
+
+#srtPlayer1 {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	top: 0px;
+	left: 50px;
+}
+
+#srtPlayer2 {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	top: 0px;
+	right: 50px;
+}
+
+.item {
+	position: relative;
+	width: 100px;
+	height: 100px;
+}
+
+.quantity {
+	position: absolute;
+	width: 100px;
+	top: 75px;
+	text-align: right;
+}
+
+#slot0 {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	border: 2px solid #242424;
+}
+
+#slot1 {
+	position: relative;
+	top: -104px;
+	left: 104px;
+	border: 2px solid #242424;
+}
+
+#slot2 {
+	position: relative;
+	top: -208px;
+	left: 208px;
+	border: 2px solid #242424;
+}
+
+#slot3 {
+	position: relative;
+	top: -208px;
+	left: 0px;
+	border: 2px solid #242424;
+}
+
+#slot4 {
+	position: relative;
+	top: -312px;
+	left: 104px;
+	border: 2px solid #242424;
+}
+
+#slot5 {
+	position: relative;
+	top: -416px;
+	left: 208px;
+	border: 2px solid #242424;
+}
+
+#slot6 {
+	position: relative;
+	top: -416px;
+	left: 0px;
+	border: 2px solid #242424;
+}
+
+#slot7 {
+	position: relative;
+	top: -520px;
+	left: 104px;
+	border: 2px solid #242424;
+}
+
+#slot8 {
+	position: relative;
+	top: -624px;
+	left: 208px;
+	border: 2px solid #242424;
+}
+
+#HGAmmo {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) 0px 0px;
+}
+
+#RifleAmmo {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -100px 0px;
+}
+
+#MGAmmo {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -200px 0px;
+}
+
+#SGAmmo {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -300px 0px;
+}
+
+#M92F {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -400px 0px;
+}
+
+#IthacaM37 {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -500px 0px;
+}
+
+#SIG556 {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -600px 0px;
+}
+
+#S75 {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -700px 0px;
+}
+
+#HKP8 {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -800px 0px;
+}
+
+#Unknown {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -900px 0px;
+}
+
+#FAS {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -100px -100px;
+}
+
+#GLEXP {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -200px -100px;
+}
+
+#GLACD {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -300px -100px;
+}
+
+#Knife {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -400px -100px;
+}
+
+#Longbow {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -500px -100px;
+}
+
+#SWM29 {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -600px -100px;
+}
+
+#GL {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -700px -100px;
+}
+
+#P226 {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -800px -100px;
+}
+
+#JailBreaker {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -900px -100px;
+}
+
+#GLICE {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) 0px -200px;
+}
+
+#HG  {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -100px -200px;
+}
+
+#FG  {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -200px -200px;
+}
+
+#IG  {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -300px -200px;
+}
+
+#RL  {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -400px -200px;
+}
+
+#GLFLM {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -500px -200px;
+}
+
+#GatlingGun {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -600px -200px;
+}
+
+#GatlingGun {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -600px -200px;
+}
+
+#MagnumAmmo {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -700px -200px;
+}
+
+#VZ61 {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -800px -200px;
+}
+
+#MP5 {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -900px -200px;
+}
+
+#MP5 {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -900px -200px;
+}
+
+#Light {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) 0px -300px;
+}
+
+#HerbGG {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -100px -300px;
+}
+
+#GLFLS {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -200px -300px;
+}
+
+#Knife2 {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -300px -300px;
+}
+
+#ExplosiveRounds {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -400px -300px;
+}
+
+#AcidRounds {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -500px -300px;
+}
+
+#NitrogenRounds {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -600px -300px;
+}
+
+#GLELC {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -700px -300px;
+}
+
+#M3 {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -800px -300px;
+}
+
+#Hydra {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -900px -300px;
+}
+
+#ProimityMines {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -300px -400px;
+}
+
+#HerbG {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -400px -400px;
+}
+
+#HerbR {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -500px -400px;
+}
+
+#HerbGR {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -700px -400px;
+}
+
+#PSG1 {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -800px -400px;
+}
+
+#M5000 {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -900px -400px;
+}
+
+#M93R {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -100px -500px;
+}
+
+#LHawk {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -800px -500px;
+}
+
+#DragunovSVD {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -900px -500px;
+}
+
+#AK74 {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -800px -600px;
+}
+
+#SamuraiEdge {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -900px -600px;
+}
+
+#Knife3 {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -200px -700px;
+}
+
+#Knife4 {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -300px -700px;
+}
+
+#PX4 {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -400px -700px;
+}
+
+#Flamethrower {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -500px -700px;
+}
+
+#StunRod {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -600px -700px;
+}
+
+#RL2 {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -700px -700px;
+}
+
+#FlameRounds {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -800px -700px;
+}
+
+#FlashRounds {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -900px -700px;
+}
+
+#ElectricRounds {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -100px -800px;
+}
+
+#EggRotten {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -500px -800px;
+}
+
+#EggWhite {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -600px -800px;
+}
+
+#EggBrown {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -700px -800px;
+}
+
+#EggGold {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -800px -800px;
+}
+
+#RPGRound {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -900px -800px;
+}
+
+#MeleeVest {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -100px -900px;
+}
+
+#BulletproofVest {
+	width: 100px;
+	height: 100px;
+	background: url(https://cdn.discordapp.com/attachments/551840398016774193/854143023746777129/RE5Items.svg) -200px -900px;
+}
