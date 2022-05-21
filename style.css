@@ -25,171 +25,6 @@ body {
 font {
 	padding-right: 10px;
 }
-
-#currenthp {
-	display: flex;
-	justify-content: start;
-	align-items: center;
-	padding-left: 10px;
-	font-size: 24px;
-	line-height: 30px;
-	width: 420px;
-}
-
-#Money {
-	position: relative;
-	top: 15px;
-	font-size: 20px;
-	display: flex;
-	justify-content: start;
-	padding-left: 10px;
-
-}
-
-#DAChris {
-	position: relative;
-	top: 15px;
-	font-size: 20px;
-	display: flex;
-	justify-content: start;
-	padding-left: 10px;
-}
-
-#DASheva {
-	position: relative;
-	top: 15px;
-	font-size: 20px;
-	display: flex;
-	justify-content: start;
-	padding-left: 10px;
-}
-
-#SRTVersion {
-	position: absolute;
-	align-items: center;
-	right: 0px;
-	bottom: 14px;
-	font-size: 20px;
-	display: flex;
-}
-
-.SRTInfoWidth {
-	position: relative;
-	width: calc(100%);
-}
-
-#GameVersion {
-	position: absolute;
-	right: 18px;
-	bottom: -15px;
-	font-size: 20px;
-	display: flex;
-}
-
-.GameInfoWidth {
-	position: relative;
-	width: calc(100%);
-}
-
-.hp {
-    position: relative;
-    top: 10px;
-    left: -1px;
-    background: rgba(34, 26, 26, 0.6);
-    width: calc(100% - 8px);
-    border: rgba(60, 60, 60, 1) solid 2px;
-    height: 30px;
-}
-
-.hpbar {
-	width: 100%;
-	height: 30px;
-}
-
-.fine {
-	background: rgba(0, 102, 0, 0.6);
-}
-
-.caution {
-	background: rgba(218, 165, 32, 0.6);
-}
-
-.danger {
-	background: rgba(153,0,0,0.6);
-}
-
-.dead {
-	background: transparent;
-}
-
-#ehp {
-	font-size: 24px;
-	color: red;
-	padding-left: 10px;
-	font-weight: 700;
-}
-
-#percenthp {
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	align-items: center;
-	padding-right: 10px;
-	font-size: 24px;
-	line-height: 30px;
-}
-
-.enemyhp {
-	position: relative;
-	top: 15px;
-	left: -1px;
-	background: rgba(34, 26, 26, 0.6);
-	width: calc(100% - 8px);
-	border: rgba(60, 60, 60, 1) solid 2px;
-	height: 30px;
-	margin-bottom: 5px;
-}
-
-.enemyhpbar {
-	width: 100%;
-	height: 30px;
-}
-
-#currentenemyhp {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	padding-left: 10px;
-	font-size: 24px;
-	line-height: 30px;
-}
-
-#percentenemyhp {
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	align-items: center;
-	padding-right: 10px;
-	font-size: 24px;
-	line-height: 30px;
-}
-
-.green {
-	color: #00FF00;
-}
-
-.yellow {
-	color: yellow;
-}
-
-.red {
-	color: red;
-}
-
-.grey {
-	color: gray;
-}
-
 #srtPlayer1 {
 	position: absolute;
 	width: 300px;
@@ -212,6 +47,14 @@ font {
 	height: 100px;
 }
 
+.equipped {
+	position: absolute;
+	width: 100px;
+	top: 0px;
+	font-size: 25px;
+	text-align: right;
+}
+
 .quantity {
 	position: absolute;
 	width: 100px;
@@ -220,68 +63,130 @@ font {
 }
 
 #slot0 {
-	position: relative;
-	top: 0px;
-	left: 0px;
+	position: fixed;
+	top: 10px;
+	left: 50px;
 	border: 2px solid #242424;
 }
 
 #slot1 {
-	position: relative;
-	top: -104px;
-	left: 104px;
+	position: fixed;
+	top: 10px;
+	left: 154px;
 	border: 2px solid #242424;
 }
 
 #slot2 {
-	position: relative;
-	top: -208px;
-	left: 208px;
+	position: fixed;
+	top: 10px;
+	left: 258px;
 	border: 2px solid #242424;
 }
 
 #slot3 {
-	position: relative;
-	top: -208px;
-	left: 0px;
+	position: fixed;
+	top: 118px;
+	left: 50px;
 	border: 2px solid #242424;
 }
 
 #slot4 {
-	position: relative;
-	top: -312px;
-	left: 104px;
+	position: fixed;
+	top: 118px;
+	left: 154px;
 	border: 2px solid #242424;
 }
 
 #slot5 {
-	position: relative;
-	top: -416px;
-	left: 208px;
+	position: fixed;
+	top: 118px;
+	left: 258px;
 	border: 2px solid #242424;
 }
 
 #slot6 {
-	position: relative;
-	top: -416px;
-	left: 0px;
+	position:fixed;
+	top: 236px;
+	left: 50px;
 	border: 2px solid #242424;
 }
 
 #slot7 {
-	position: relative;
-	top: -520px;
-	left: 104px;
+	position: fixed;
+	top: 236px;
+	left: 154px;
 	border: 2px solid #242424;
 }
 
 #slot8 {
-	position: relative;
-	top: -624px;
-	left: 208px;
+	position: fixed;
+	top: 236px;
+	left: 258px;
 	border: 2px solid #242424;
 }
 
+#slotNext0 {
+	position: fixed;
+	top: 10px;
+	right: 258px;
+	border: 2px solid #242424;
+}
+
+#slotNext1 {
+	position: fixed;
+	top: 10px;
+	right: 154px;
+	border: 2px solid #242424;
+}
+
+#slotNext2 {
+	position: fixed;
+	top: 10px;
+	right: 50px;
+	border: 2px solid #242424;
+}
+
+#slotNext3 {
+	position: fixed;
+	top: 118px;
+	right: 258px;
+	border: 2px solid #242424;
+}
+
+#slotNext4 {
+	position: fixed;
+	top: 118px;
+	right: 154px;
+	border: 2px solid #242424;
+}
+
+#slotNext5 {
+	position: fixed;
+	top: 118px;
+	right: 50px;
+	border: 2px solid #242424;
+}
+
+#slotNext6 {
+	position:fixed;
+	top: 236px;
+	right: 258px;
+	border: 2px solid #242424;
+}
+
+#slotNext7 {
+	position: fixed;
+	top: 236px;
+	right: 154px;
+	border: 2px solid #242424;
+}
+
+#slotNext8 {
+	position: fixed;
+	top: 236px;
+	right: 50px;
+	border: 2px solid #242424;
+}
 #HGAmmo {
 	width: 100px;
 	height: 100px;

@@ -34,6 +34,73 @@ function getData() {
 		});
 }
 
+function SetItemPlayer1(item) {
+	let mainContainer = document.getElementById("srtPlayer1");
+	if (item.StackSize < item.MaxSize) {
+		mainContainer.innerHTML += `
+		<div id="slot${item.SlotNo}">
+			<img id="${item.ItemName}">
+				<div class="quantity">
+					<font color="#FFFFFF">
+						${item.StackSize}
+					</font>
+				</div>
+				
+			</img>
+		</div>`;
+	} else {
+		mainContainer.innerHTML += `
+		<div id="slot${item.SlotNo}">
+			<img id="${item.ItemName}">
+				<div class="quantity">
+					<font color="#00FF00">
+						${item.StackSize}
+					</font>
+				</div>
+			</img>
+		</div>`;
+	}
+
+	if (item.EquippedState == 1) {
+		mainContainer.innerHTML += `
+		<div id="slot${item.SlotNo}">
+			<div class="equipped">
+				<font color="orange">
+					E
+				</font>
+			</div>
+		</div>`;
+	}
+
+}
+
+function SetItemPlayer2(item) {
+	let mainContainer = document.getElementById("srtPlayer2");
+	if (item.StackSize < item.MaxSize) {
+		mainContainer.innerHTML += `
+		<div id="slotNext${item.SlotNo}">
+			<img id="${item.ItemName}">
+				<div class="quantity">
+					<font color="#FFFFFF">
+						${item.StackSize}
+					</font>
+				</div>
+			</img>
+		</div>`;
+	} else {
+		mainContainer.innerHTML += `
+		<div  id="slotNext${item.SlotNo}">
+			<img id="${item.ItemName}">
+				<div class="quantity">
+					<font color="#00FF00">
+						${item.StackSize}
+					</font>
+				</div>
+			</img>
+		</div>`;
+	}
+}
+
 function appendData(data) {
 	//console.log(data);
 	let mainContainer = document.getElementById("srtPlayer1");
@@ -44,52 +111,20 @@ function appendData(data) {
 	var filteredItems = data.PlayerInventory.filter((item) => {
 		return (item.IsItem && item.SlotNo < 9);
 	});
-	
+
 	filteredItems.sort(function (a, b) {
 		return Asc(a.SlotNo, b.SlotNo) || Desc(a.SlotNo, b.SlotNo);
 	}).map(item => {
-		if (data.ChrisDA > 0) {
-			SetItemPlayer1(item);
-		}
+		SetItemPlayer1(item);
 	});
-	
+
 	var filteredItems2 = data.Player2Inventory.filter((item) => {
 		return (item.IsItem && item.SlotNo < 9);
 	});
-	
+
 	filteredItems2.sort(function (a, b) {
 		return Asc(a.SlotNo, b.SlotNo) || Desc(a.SlotNo, b.SlotNo);
 	}).map(item => {
-		if (data.ShevaDA > 0) {
-			SetItemPlayer2(item);
-		}
+		SetItemPlayer2(item);
 	});
-}
-
-function SetItemPlayer1(item) {
-	let mainContainer = document.getElementById("srtPlayer1");
-	mainContainer.innerHTML += `
-		<div class="item" id="slot${item.SlotNo}">
-			<img id="${item.ItemName}">
-				<div class="quantity">
-					<font color="#00FF00">
-						${item.StackSize}
-					</font>
-				</div>
-			</img>
-		</div>`;
-}
-
-function SetItemPlayer2(item) {
-	let mainContainer = document.getElementById("srtPlayer2");
-	mainContainer.innerHTML += `
-		<div class="item" id="slot${item.SlotNo}">
-			<img id="${item.ItemName}">
-				<div class="quantity">
-					<font color="#00FF00">
-						${item.StackSize}
-					</font>
-				</div>
-			</img>
-		</div>`;
 }
