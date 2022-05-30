@@ -34,11 +34,45 @@ function getData() {
 		});
 }
 
-function SetItemPlayer1(item) {
+function RE5GetItemsPlayer1(data) {
 	let mainContainer = document.getElementById("srtPlayer1");
-	if (item.StackSize < item.MaxSize) {
+	mainContainer.innerHTML = "";
+
+	var filteredItems = data.PlayerInventory.filter((item) => {
+		return (item.IsItem && item.SlotNo < 9);
+	});
+	
+	filteredItems.sort(function (a, b) {
+		return Asc(a.SlotNo, b.SlotNo) || Desc(a.SlotNo, b.SlotNo);
+	}).map(item => {
+		if (data.ChrisDA > 0) {
+			RE5GetPlayer1(item);
+		}
+	});
+}
+
+function RE5GetItemsPlayer2(data) {
+	let mainContainer2 = document.getElementById("srtPlayer2");
+	mainContainer2.innerHTML = "";
+	
+	var filteredItems2 = data.Player2Inventory.filter((item) => {
+		return (item.IsItem && item.SlotNo < 9);
+	});
+	
+	filteredItems2.sort(function (a, b) {
+		return Asc(a.SlotNo, b.SlotNo) || Desc(a.SlotNo, b.SlotNo);
+	}).map(item => {
+		if (data.ShevaDA > 0) {
+			RE5GetPlayer2(item);
+		}
+	});
+}
+
+function RE5GetPlayer1(item) {
+	let mainContainer = document.getElementById("srtPlayer1");
+	if (item.StackSize < item.MaxSize && item.StackSize != 0) {
 		mainContainer.innerHTML += `
-		<div id="slot${item.SlotNo}">
+		<div class="item" id="slot${item.SlotNo}">
 			<img id="${item.ItemName}">
 				<div class="quantity">
 					<font color="#FFFFFF">
@@ -48,9 +82,21 @@ function SetItemPlayer1(item) {
 				
 			</img>
 		</div>`;
+	} else if(item.StackSize == 0 && item.MaxSize >= 1){
+		mainContainer.innerHTML += `
+		<div class="item" id="slot${item.SlotNo}">
+			<img id="${item.ItemName}">
+				<div class="quantity">
+					<font color="#FF0000">
+						${item.StackSize}
+					</font>
+				</div>
+				
+			</img>
+		</div>`;
 	} else {
 		mainContainer.innerHTML += `
-		<div id="slot${item.SlotNo}">
+		<div class="item" id="slot${item.SlotNo}">
 			<img id="${item.ItemName}">
 				<div class="quantity">
 					<font color="#00FF00">
@@ -60,7 +106,6 @@ function SetItemPlayer1(item) {
 			</img>
 		</div>`;
 	}
-
 	if (item.EquippedState == 1) {
 		mainContainer.innerHTML += `
 		<div id="slot${item.SlotNo}">
@@ -71,25 +116,37 @@ function SetItemPlayer1(item) {
 			</div>
 		</div>`;
 	}
-
 }
 
-function SetItemPlayer2(item) {
+function RE5GetPlayer2(item) {
 	let mainContainer = document.getElementById("srtPlayer2");
-	if (item.StackSize < item.MaxSize) {
+	if (item.StackSize < item.MaxSize && item.StackSize != 0) {
 		mainContainer.innerHTML += `
-		<div id="slotNext${item.SlotNo}">
+		<div class="item" id="slot${item.SlotNo}">
 			<img id="${item.ItemName}">
 				<div class="quantity">
 					<font color="#FFFFFF">
 						${item.StackSize}
 					</font>
 				</div>
+				
+			</img>
+		</div>`;
+	} else if(item.StackSize == 0 && item.MaxSize >= 1){
+		mainContainer.innerHTML += `
+		<div class="item" id="slot${item.SlotNo}">
+			<img id="${item.ItemName}">
+				<div class="quantity">
+					<font color="#FF0000">
+						${item.StackSize}
+					</font>
+				</div>
+				
 			</img>
 		</div>`;
 	} else {
 		mainContainer.innerHTML += `
-		<div  id="slotNext${item.SlotNo}">
+		<div class="item" id="slot${item.SlotNo}">
 			<img id="${item.ItemName}">
 				<div class="quantity">
 					<font color="#00FF00">
@@ -99,32 +156,19 @@ function SetItemPlayer2(item) {
 			</img>
 		</div>`;
 	}
+	if (item.EquippedState == 1) {
+		mainContainer.innerHTML += `
+		<div id="slot${item.SlotNo}">
+			<div class="equipped2">
+				<font color="orange">
+					E
+				</font>
+			</div>
+		</div>`;
+	}
 }
 
 function appendData(data) {
-	//console.log(data);
-	let mainContainer = document.getElementById("srtPlayer1");
-	let mainContainer2 = document.getElementById("srtPlayer2");
-	mainContainer.innerHTML = "";
-	mainContainer2.innerHTML = "";
-
-	var filteredItems = data.PlayerInventory.filter((item) => {
-		return (item.IsItem && item.SlotNo < 9);
-	});
-
-	filteredItems.sort(function (a, b) {
-		return Asc(a.SlotNo, b.SlotNo) || Desc(a.SlotNo, b.SlotNo);
-	}).map(item => {
-		SetItemPlayer1(item);
-	});
-
-	var filteredItems2 = data.Player2Inventory.filter((item) => {
-		return (item.IsItem && item.SlotNo < 9);
-	});
-
-	filteredItems2.sort(function (a, b) {
-		return Asc(a.SlotNo, b.SlotNo) || Desc(a.SlotNo, b.SlotNo);
-	}).map(item => {
-		SetItemPlayer2(item);
-	});
+	RE5GetItemsPlayer1(data);
+	RE5GetItemsPlayer2(data);
 }
